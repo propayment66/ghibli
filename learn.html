@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Couple Art</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #ff5e78;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        input {
+            border: 1px solid #ddd;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #ff5e78;
+            box-shadow: 0px 0px 5px rgba(255, 94, 120, 0.5);
+        }
+        button {
+            background: #ff5e78;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e04a60;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fake Couple Art</h2>
+        <p>Upload your photo and get a beautiful Studio Ghibli-style couple art!</p>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="whatsapp" placeholder="WhatsApp Number (with country code)">
+        <input type="file" id="image" accept="image/*">
+        <button id="uploadButton" onclick="handleUpload()">Upload Image</button>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Ghibli art.  POWERED BY <B>PRO PAYMENT</B>. All rights reserved.
+    </div>
+
+    <script>
+        function handleUpload() {
+            const name = document.getElementById('name').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const image = document.getElementById('image').files[0];
+            const button = document.getElementById('uploadButton');
+
+            if (!name || !whatsapp || !image) {
+                alert("Please fill in all details and upload an image!");
+                return;
+            }
+
+            button.textContent = "Pay Now";
+            button.onclick = handlePayment;
+        }
+
+        function handlePayment() {
+            window.location.href = "https://payments.cashfree.com/links/D8b99n5jtjn0";
+        }
+    </script>
+</body>
+</html>
